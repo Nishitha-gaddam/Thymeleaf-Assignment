@@ -5,6 +5,7 @@ import com.myrestaurant.restaurant.entity.Bills;
 import com.myrestaurant.restaurant.entity.Orders;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -28,6 +29,11 @@ public class OrdersController {
     @GetMapping("/bill/{customerId}")
     public Optional<Orders> getBill(@PathVariable int customerId){
         return ordersRepository.findById(customerId);
+    }
+    
+    @PostMapping("/placeorder")
+    public String placeOrder() {
+    	return null;
     }
 
 }
