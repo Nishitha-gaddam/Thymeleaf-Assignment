@@ -21,7 +21,7 @@ import javax.validation.Valid;
 @RequestMapping("/api1")
 public class CustomerController {
 	private CustomerRepository customerRepository;
-	
+
 //	private OrdersRepository ordersRepository;
 //
 //	   public CustomerController(OrdersRepository theOrdersRepository){
@@ -43,15 +43,18 @@ public class CustomerController {
 		return "customer-login";
 	}
 
-//	@PostMapping("/save")
-	@RequestMapping(value = "/save", method = {RequestMethod.GET})
+	@PostMapping("/save")
+//	@RequestMapping(value = "/save", method = {RequestMethod.GET})
 	public String saveEmployee(@ModelAttribute("customer") Customer theCustomer) {
 
 		customerRepository.save(theCustomer);
 
-		return "redirect:/api2/place-order";
+		return "index";
 	}
 
-	
+//	@GetMapping("/place-order")
+//	public String redirectPageToOrdersController() {
+//		return "redirect:/api2/place-order";
+//	}
 
 }

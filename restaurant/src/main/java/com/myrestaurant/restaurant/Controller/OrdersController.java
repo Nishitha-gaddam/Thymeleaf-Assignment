@@ -3,17 +3,20 @@ package com.myrestaurant.restaurant.Controller;
 import com.myrestaurant.restaurant.Repository.OrdersRepository;
 import com.myrestaurant.restaurant.entity.Bills;
 import com.myrestaurant.restaurant.entity.Orders;
+
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 import java.util.Optional;
 
-@RestController
+@Controller
 @RequestMapping("/api2")
 public class OrdersController {
     private OrdersRepository ordersRepository;
@@ -31,11 +34,12 @@ public class OrdersController {
     public Optional<Orders> getBill(@PathVariable int customerId){
         return ordersRepository.findById(customerId);
     }
-    
-    @PostMapping("/place-order")
+//    
+//    @PostMapping("/place-order")
+    @RequestMapping(value = "/place-order", method = {RequestMethod.GET,RequestMethod.POST})
 	public String placeOrder(@ModelAttribute("orders") Orders theOrders) {
 		ordersRepository.save(theOrders);
-		return "index";
+		return "place-order";
 	}
   
 
