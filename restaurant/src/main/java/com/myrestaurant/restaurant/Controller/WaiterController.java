@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 @Controller
 @RequestMapping("/api")
 public class WaiterController {
@@ -35,7 +37,7 @@ public class WaiterController {
     }
     
     @GetMapping("/findorder")
-    public String getAllOrders(Model theModel) {
+    public String getAllOrders(Model theModel ,HttpServletRequest httpServletRequest) {
     	List<Orders>orderList=waiterService.findAll();
     	
     	theModel.addAttribute("ordersPlaced", orderList);

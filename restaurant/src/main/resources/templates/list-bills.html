@@ -47,10 +47,10 @@
 				</thead>
 				<tr th:each="bill : ${ordersPlaced}">
 				
-						<td> th:text="${bill.billId}" </td>
-						<td> th:text="${bill.customerId}" </td>
-						<td> th:text="${bill.totalAmt} "</td>
-						<td> th:text="${bill.billDate}"</td>
+						<td th:text="${bill.billId}" />
+						<td th:text="${bill.customerId}" />
+						<td th:text="${bill.totalAmt} "/>
+						<td th:text="${bill.billDate}"/>
 		
 						
 					</tr>					

@@ -50,13 +50,13 @@
 				</tr>
 				</thead>
 				<tr th:each="orders : ${ordersPlaced}">
-				
-						<td> th:text="${orders.customer_id}" </td>
-						<td> th:text="${orders.orderId}" </td>
-						<td> th:text="${orders.itemName} "</td>
-						<td> th:text="${orders.quantity}"</td>
-						<td> th:text="${orders.itemPrice} "</td>
-						<td> th:text="${orders.orderDate}"</td>
+
+						<td th:text="${orders.customerId}" />
+						<td th:text="${orders.orderId}" />
+						<td th:text="${orders.itemName} "/>
+						<td th:text="${orders.quantity}"/>
+						<td th:text="${orders.itemPrice} "/>
+						<td th:text="${orders.orderDate}"/>
 						
 					</tr>					
 			</table>

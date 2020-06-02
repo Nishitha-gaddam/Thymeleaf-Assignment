@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
 import java.sql.Date;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 @Controller
 @RequestMapping("/api6")
 public class OwnerController {
@@ -47,13 +49,13 @@ public class OwnerController {
     
     
     @GetMapping("/findbills")
-    public String getAllOrders(Model theModel) {
+    public String getAllOrders(Model theModel,HttpServletRequest httpServletRequest) {
     	List<Bills>billList=ownerRepository.findAll();
     	
     	theModel.addAttribute("ordersPlaced", billList);
     	
     	return "list-bills";
-    	
     }
+   }
     
-}
+
