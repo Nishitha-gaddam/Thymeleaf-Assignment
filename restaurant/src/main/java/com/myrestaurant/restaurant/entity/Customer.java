@@ -19,6 +19,7 @@ public class Customer {
     @Column(name = "customer_id")
     private int customerId;
 
+
     @Column(name = "customer_name")
     private String customerName;
 

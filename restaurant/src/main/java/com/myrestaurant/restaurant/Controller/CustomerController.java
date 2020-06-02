@@ -41,7 +41,7 @@ public class CustomerController {
 		
 			customerRepository.save(theCustomer);
 			
-			return "redirect:/ap1/customer-login";
+			return "redirect:/ap1/place-order";
 		}
 	
     
