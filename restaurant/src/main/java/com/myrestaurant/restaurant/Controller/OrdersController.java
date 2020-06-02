@@ -4,6 +4,7 @@ import com.myrestaurant.restaurant.Repository.OrdersRepository;
 import com.myrestaurant.restaurant.entity.Bills;
 import com.myrestaurant.restaurant.entity.Orders;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -31,9 +32,11 @@ public class OrdersController {
         return ordersRepository.findById(customerId);
     }
     
-    @PostMapping("/placeorder")
-    public String placeOrder() {
-    	return null;
-    }
+    @PostMapping("/place-order")
+	public String placeOrder(@ModelAttribute("orders") Orders theOrders) {
+		ordersRepository.save(theOrders);
+		return "index";
+	}
+  
 
 }

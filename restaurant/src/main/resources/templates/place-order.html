@@ -1,24 +1,34 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8"/>
     <meta name="viewport"
-          content="width=device-width, initial-scale=1, shrink-to-fit=no">
+          content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <link rel="stylesheet"
           href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
           integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
-          crossorigin="anonymous">
+          crossorigin="anonymous"/>
+          
+    <link
+            rel="stylesheet"
+            type="text/css"
+            href="../static/css/placeorder.css"
+            th:href="@{/css/placeorder.css}"
+    />
   <title>Place Order</title>
 
 </head>
 
 <body>
 <div class="container">
-<div class="row justify-content-md-center"><h1 class="display-3">Customer Login Page</h1></div>
+<div class="row justify-content-md-center"><nav class="navbar navbar-light bg-light">
+  <span class="navbar-brand mb-0 h1">Place Order</span>
+</nav></div>
 <div class="split left">
   <div class="centered">
-  <form action="#" th:action="@{/employees/save}"
-						 th:object="${employee}" method="POST">
+  <form action="#" th:action="@{/api2/place-order}"
+						 th:object="${orders}" method="GET">
 		
 			<!-- Add hidden form field to handle update -->
 			<input type="hidden" th:field="*{customerId}" />
