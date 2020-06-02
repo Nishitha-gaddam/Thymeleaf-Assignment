@@ -27,19 +27,19 @@ public class Bills {
     public Bills() {
     }
 
-    public Bills(int billId, int orderId, double totalAmt, Date billDate) {
+    public Bills(int billId, int customerId, double totalAmt, Date billDate) {
         this.billId = billId;
-        this.customerId = orderId;
+        this.customerId = customerId;
         this.totalAmt = totalAmt;
         this.billDate = billDate;
     }
 
-    public int getOrderId() {
+    public int getCustomerId() {
         return customerId;
     }
 
-    public void setOrderId(int orderId) {
-        this.customerId = orderId;
+    public void setCustomerId(int customerId) {
+        this.customerId = customerId;
     }
 
     public double getTotalAmt() {
@@ -50,11 +50,11 @@ public class Bills {
         this.totalAmt = totalAmt;
     }
 
-    public Date getOrderDate() {
+    public Date getBillDate() {
         return billDate;
     }
 
-    public void setOrderDate(Date orderDate) {
+    public void setBillDate(Date orderDate) {
         this.billDate = orderDate;
     }
 
@@ -70,9 +70,9 @@ public class Bills {
     public String toString() {
         return "Bills{" +
                 "billId=" + billId +
-                "orderId=" + customerId +
+                "customerId=" + customerId +
                 ", totalAmt=" + totalAmt +
-                ", orderDate=" + billDate +
+                ", billDate=" + billDate +
                 '}';
     }
 }

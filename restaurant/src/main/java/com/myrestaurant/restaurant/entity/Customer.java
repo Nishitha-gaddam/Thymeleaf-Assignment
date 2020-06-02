@@ -6,6 +6,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+
 
 @Entity
 @Table(name="customer")
@@ -20,13 +22,17 @@ public class Customer {
     @Column(name = "customer_name")
     private String customerName;
 
+    @Column(name="mobile_number")
+    private String mobileNumber;
+    
     public Customer() {
 
     }
 
-    public Customer(int customerId, String customerName) {
+    public Customer(int customerId, String customerName,String mobileNumber ) {
         this.customerId = customerId;
         this.customerName = customerName;
+        this.mobileNumber=mobileNumber;
     }
 
     public int getCustomerId() {
@@ -44,12 +50,20 @@ public class Customer {
     public void setCustomerName(String customerName) {
         this.customerName = customerName;
     }
+    
+    public String getMobileNumber() {
+    	return mobileNumber;
+    }
+    public void setMobileNumber(String mobileNumber) {
+    	this.mobileNumber=mobileNumber;
+    }
 
     @Override
     public String toString() {
         return "Customer{" +
                 "customerId=" + customerId +
                 ", customerName='" + customerName + '\'' +
+                ",mobileNumber="+mobileNumber+'\''+
                 '}';
     }
 }

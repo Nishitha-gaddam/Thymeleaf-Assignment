@@ -2,6 +2,10 @@ package com.myrestaurant.restaurant.Controller;
 
 import com.myrestaurant.restaurant.Repository.OwnerRepository;
 import com.myrestaurant.restaurant.entity.Bills;
+import com.myrestaurant.restaurant.entity.Orders;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.sql.Date;
 import java.util.List;
 
-@RestController
+@Controller
 @RequestMapping("/api6")
 public class OwnerController {
     private OwnerRepository ownerRepository;
@@ -34,4 +38,22 @@ public class OwnerController {
         return ownerRepository.getBillsByDay(date);
 
     }
+    
+    @GetMapping("/loginForm")
+    public String login() {
+    	return "owner-login";
+    }
+    
+    
+    
+    @GetMapping("/findbills")
+    public String getAllOrders(Model theModel) {
+    	List<Bills>billList=ownerRepository.findAll();
+    	
+    	theModel.addAttribute("ordersPlaced", billList);
+    	
+    	return "list-bills";
+    	
+    }
+    
 }

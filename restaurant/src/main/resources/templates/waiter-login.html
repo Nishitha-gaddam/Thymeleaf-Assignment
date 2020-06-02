@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+          crossorigin="anonymous">
+
+    <link
+            rel="stylesheet"
+            type="text/css"
+            href="../static/css/signin.css"
+            th:href="@{/css/signin.css}"
+    />
+
+    <title> Waiter Login Form</title>
+
+</head>
+
+<body>
+<div class="container">
+    <div class="row justify-content-md-center"><h1 class="display-3">Waiter Login Page</h1></div>
+    <div class="form-padding"><div class="row justify-content-md-center ">
+        <form id="myForm1" name="myForm1" action="findorder"
+                    method="GET" class="form-signin">
+            <h2 class="h3 mb-3 font-weight-normal">Please sign in</h2>
+            <table>
+                <tbody>
+
+                <tr>
+                    <td><label  class="sr-only">Enter Name:</label></td>
+                    <td><input name="waitername" id="waitername" path="waiterName" class="form-control" placeholder="Name"/></td>
+                </tr>
+             <tr>
+					<td><label class="sr-only"> Enter Password:</label></td>
+					<td><input name="password1" id="password1" path="password" class="form-control" type="password" placeholder="Password"/></td>
+				</tr>
+
+
+				<tr>
+					<td><label></label></td>
+					<td><input type="submit" value="Login" class="save btn btn-lg btn-success btn-block "/></td>
+				</tr>
+
+                </tbody>
+            </table>
+
+
+        </form>
+    </div>
+    </div>
+</div>
+
+</body>
+</html>
