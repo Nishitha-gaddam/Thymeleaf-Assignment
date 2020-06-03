@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/api3")
+@RequestMapping("/bill")
 public class BillController {
 
     private BillRepository billRepository;
@@ -21,7 +21,7 @@ public class BillController {
     public BillController(BillRepository theBillRepository){
         billRepository=theBillRepository;
     }
-     @GetMapping("/bill")
+     @GetMapping("/findbill")
     public List<Bills> findAll(){
         return billRepository.findAll();
      }
