@@ -17,6 +17,20 @@
     />
 
     <title>Login Form</title>
+    <script type="text/javascript">
+	function validateForm() {
+
+		var x = document.getElementById("name");
+		var y = document.getElementById("mobileNumber");
+		if (x.value.length<=0){			x.classList.add('is-invalid');
+		return false;
+		}
+		if (y.value.length<=0){
+			y.classList.add('is-invalid');
+			return false;
+		}	
+	}
+</script>
 
 </head>
 
@@ -26,7 +40,7 @@
     <div class="form-padding"><div class="row justify-content-md-center ">
                    
           <form action="#" th:action="@{/api1/save}"
-						 th:object="${customer}" method="POST" class="form-signin">
+						 th:object="${customer}" method="POST" class="form-signin"  onSubmit="return validateForm()">
             <h2 class="h3 mb-3 font-weight-normal">Please sign in</h2>
             <table>
                 <tbody>

@@ -10,6 +10,8 @@ public class Orders {
 
 //    @OneToMany(cascade=CascadeType.ALL)
 //    @JoinColumn(name = "customer")
+	  @GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="customer_id")
     private int customerId;
 
     @Id
@@ -26,6 +28,7 @@ public class Orders {
     @Column(name="item_price")
     private Double itemPrice;
 
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name="order_date")
     private Date orderDate;
 

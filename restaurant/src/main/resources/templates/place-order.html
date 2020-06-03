@@ -57,7 +57,7 @@ table{
 						 th:object="${orders}" method="GET">
 		
 			<!-- Add hidden form field to handle update -->
-			<input type="hidden" th:field="*{customerId}" />
+			<input type="hidden" th:value="*{customerId}"  value="1"/>
 			<input type="hidden" th:field="*{orderId}" />
 			<div class="form-inline">
 				Item Name<br><input type="text" th:field="*{itemName}"
@@ -68,6 +68,7 @@ table{
 				Quantity<br><input type="number" th:field="*{quantity}"
 						class="form-control mb-4 col-4" placeholder="Quantity">
 			</div>
+			<input type="hidden" th:field="*{orderDate}"  value="2020-06-03"/>
 			<br>						
 			<button type="submit" class="btn btn-info col-2">Save</button>
 						

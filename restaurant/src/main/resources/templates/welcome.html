@@ -19,9 +19,11 @@
     </div>
     <ul class="nav navbar-nav">
       <li ><a href="#">Home</a></li>
-      <li><a th:href="@{/api1/login}">Customer Login</a></li>
+       <li ><a th:href="@{/api6/loginForm}">Admin Login</a></li>
        <li ><a th:href="@{/api/login}">Waiter Login</a></li>
-        <li ><a th:href="@{/api6/loginForm}">Admin Login</a></li>
+      <li><a th:href="@{/api1/login}">Customer Login</a></li>
+       
+       
       
       
     </ul>
@@ -40,29 +42,29 @@
   
   <!-- Wrapper for slides -->
   <div class="carousel-inner">
-    <div class="item active" style="height:875px;">
+    <div class="item active" style="height:600px;">
       
       <img src="/img/restaurant.jpeg" alt="Chania">
       
       	<div class="carousel-caption" style="text-align:center;">
-        <h3>Cafe :)</h3>
+        <h3 style="font-weight:bold;">Cafe :)</h3>
         <p>Welcome to My cafe </p>
    
      </div>
     </div>
 
-    <div class="item" style="height:875px;">
-      <img src="/img/dessert.jpg" style='height: 100%;' alt="Chicago">
+    <div class="item" style="height:600px;width:100%">
+      <img src="/img/dessert.jpg" style='height:100%;width:100%' alt="Chicago">
       <div class="carousel-caption" style="text-align:center;">
-        <h3 style="color:black;font-size:32px;font-family:Impact">Desserts</h3>
+        <h3 style="color:black;font-size:32px;font-family:Impact,font-weight:bold;">Desserts</h3>
       </div>
     </div>
 
-    <div class="item" style="height:875px;">
+    <div class="item" style="height:600px;width:100%">
       <div class=test>
-      <img  style='height: 100%; width: 100%;' src="/img/pizza-1.jpg" alt="New York">
-      <div class="carousel-caption">
-        <h3 style="color:black;font-family:Impact;font-size:30px;text-align:top">Food that makes u come back</h3>
+      <img  style='height:100%;width:100%;' src="/img/pizza-1.jpg" alt="New York">
+      <div class="carousel-caption" style="align-content:top;">
+        <h3 style="color:black;font-family:Impact;font-size:30px;font-weight:bold;">Food that makes u come back</h3>
         <p></p>
       </div>
   </div>

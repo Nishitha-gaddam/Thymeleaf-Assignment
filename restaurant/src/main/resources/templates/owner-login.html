@@ -17,6 +17,20 @@
     />
 
     <title> Admin Login Form</title>
+     <script type="text/javascript">
+	function validateForm() {
+
+		var x = document.getElementById("ownername");
+		var y = document.getElementById("password1");
+		if (x.value.length<=0){			x.classList.add('is-invalid');
+		return false;
+		}
+		if (y.value.length<=0){
+			y.classList.add('is-invalid');
+			return false;
+		}	
+	}
+</script>
 
 </head>
 
@@ -25,14 +39,14 @@
     <div class="row justify-content-md-center"><h1 class="display-3">Admin Login Page</h1></div>
     <div class="form-padding"><div class="row justify-content-md-center ">
         <form id="myForm2" name="myForm2" action="findbills"
-                   method="GET" class="form-signin">
+                   method="GET" class="form-signin" onSubmit="return validateForm()">
             <h2 class="h3 mb-3 font-weight-normal">Please sign in</h2>
             <table>
                 <tbody>
 
                 <tr>
                     <td><label  class="sr-only">Enter Name:</label></td>
-                    <td><input name="Ownername" id="ownername" path="OwnerName" class="form-control" placeholder="Name"/></td>
+                    <td><input name="ownername" id="ownername" path="OwnerName" class="form-control" placeholder="Name"/></td>
                 </tr>
              <tr>
 					<td><label class="sr-only"> Enter Password:</label></td>

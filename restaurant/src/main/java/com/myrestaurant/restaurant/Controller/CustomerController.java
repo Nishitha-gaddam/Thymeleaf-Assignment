@@ -49,7 +49,7 @@ public class CustomerController {
 
 		customerRepository.save(theCustomer);
 
-		return "index";
+		return "redirect:/api2/place-order";
 	}
 
 //	@GetMapping("/place-order")
