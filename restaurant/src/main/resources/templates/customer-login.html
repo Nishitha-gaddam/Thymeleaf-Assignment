@@ -20,7 +20,7 @@
     <script type="text/javascript">
 	function validateForm() {
 
-		var x = document.getElementById("name");
+		var x = document.getElementById("customerName");
 		var y = document.getElementById("mobileNumber");
 		if (x.value.length<=0){			x.classList.add('is-invalid');
 		return false;
@@ -47,7 +47,7 @@
 
                 <tr>
                     <td><label  class="sr-only">Enter Name:</label></td>
-                    <td><input name="name" id="name" path="customerName" class="form-control" placeholder="Cutomer Name"/></td>
+                    <td><input name="customerName" id="customerName" path="customerName" class="form-control" placeholder="Cutomer Name"/></td>
                 </tr>
                 <tr>
                     <td><label class="sr-only"> Enter Mobile Number:</label></td>

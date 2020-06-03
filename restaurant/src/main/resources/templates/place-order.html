@@ -4,114 +4,113 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 body {
-  font-family: Arial;
-  color: black;
+	font-family: Arial;
+	color: black;
 }
 
 .split {
-  height: 100%;
-  width: 50%;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  overflow-x: hidden;
-  padding-top: 20px;
+	height: 100%;
+	width: 50%;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	overflow-x: hidden;
+	padding-top: 20px;
 }
 
 .left {
-  left: 0;
-  background-color: #111;
-  color:white;
-  font-family: Arial;
+	left: 0;
+	background-color: #111;
+	color: white;
+	font-family: Arial;
 }
 
 .right {
-  right: 0;
-  background-color: white;
+	right: 0;
+	background-color: white;
 }
 
-table{
-  height:300px;
-  width:200px;
+table {
+	height: 300px;
+	width: 200px;
 }
+
 .centered {
-  position: absolute;
-  top: 30%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
+	position: absolute;
+	top: 30%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
 }
 
 .centered img {
-  width: 150px;
-  border-radius: 50%;
+	width: 150px;
+	border-radius: 50%;
 }
 </style>
 </head>
 <body>
 
-<div class="split left">
-  <div class="centered">
-    <h2>Place Order</h2>
-   <form action="#" th:action="@{/api2/place-order}"
+	<div class="split left">
+		<div class="centered">
+			<h2>Place Order</h2>
+			<form action="#" th:action="@{/api2/place-order}"
 						 th:object="${orders}" method="GET">
 		
 			<!-- Add hidden form field to handle update -->
-			<input type="hidden" th:value="*{customerId}"  value="1"/>
+			<input type="hidden" th:field="*{customerId}" />
 			<input type="hidden" th:field="*{orderId}" />
 			<div class="form-inline">
-				Item Name<br><input type="text" th:field="*{itemName}"
+				 Item Name<br><input type="text" th:field="*{itemName}"
 						class="form-control mb-4 col-4" placeholder="Item Name">
-			</div>
-		    
-			<div class="form-inline">
-				Quantity<br><input type="number" th:field="*{quantity}"
+				</div>
+
+				<div class="form-inline">
+					Quantity<br>
+					<input type="number" th:field="*{quantity}"
 						class="form-control mb-4 col-4" placeholder="Quantity">
-			</div>
-			<input type="hidden" th:field="*{orderDate}"  value="2020-06-03"/>
-			<br>						
+				</div>
 			<button type="submit" class="btn btn-info col-2">Save</button>
 						
 		</form>
 	
 		
-  </div>
-</div>
-
-<div class="split right">
-  <div class="centered">
-    <h2>Menu Items</h2>
-    <table class="table table-bordered table-striped">
-		<thead class="thead-dark">
-			<tr>
-				<th>Item Name</th>
-				<th>Price</th>
-				</tr>
+		</div>
+		</div>
+	<div class="split right">
+		<div class="centered">
+			<h2>Menu Items</h2>
+			<table class="table table-bordered table-striped">
+				<thead class="thead-dark">
+					<tr>
+						<th>Item Name</th>
+						<th>Price</th>
+					</tr>
 				</thead>
 				<tr>
-				<td>Pizza</td>
-				<td>100</td>
+					<td>Pizza</td>
+					<td>100</td>
 				</tr>
 				<tr>
-				<td>Biryani</td>
-				<td>200</td>
+					<td>Biryani</td>
+					<td>200</td>
 				</tr>
 				<tr>
-				<td>Burger</td>
-				<td>250</td>
+					<td>Burger</td>
+					<td>250</td>
 				</tr>
 				<tr>
-				<td>Pani-Puri</td>
-				<td>60</td>
+					<td>Pani-Puri</td>
+					<td>60</td>
 				</tr>
 				<tr>
-				<td>Frankie</td>
-				<td>100</td>
+					<td>Frankie</td>
+					<td>100</td>
 				</tr>
-				</table>
-				
-  </div>
-</div>
-     
+			</table>
+
+		</div>
+	</div>
+
 </body>
-</html> 
+</html>

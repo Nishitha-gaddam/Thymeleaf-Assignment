@@ -35,10 +35,11 @@ public class OrdersController {
         return ordersRepository.findById(customerId);
     }
 //    
-//    @PostMapping("/place-order")
-    @RequestMapping(value = "/place-order", method = {RequestMethod.GET,RequestMethod.POST})
+//   @PostMapping("/place-order")
+@RequestMapping(value = "/place-order", method = {RequestMethod.GET,RequestMethod.POST})
 	public String placeOrder(@ModelAttribute("orders") Orders theOrders) {
-		ordersRepository.save(theOrders);
+		System.out.println(ordersRepository.save(theOrders));
+	   ordersRepository.save(theOrders);
 		return "place-order";
 	}
   

@@ -46,10 +46,9 @@ public class CustomerController {
 	@PostMapping("/save")
 //	@RequestMapping(value = "/save", method = {RequestMethod.GET})
 	public String saveEmployee(@ModelAttribute("customer") Customer theCustomer) {
-
 		customerRepository.save(theCustomer);
-
-		return "redirect:/api2/place-order";
+       System.out.println(customerRepository.save(theCustomer));
+		return "index";
 	}
 
 //	@GetMapping("/place-order")

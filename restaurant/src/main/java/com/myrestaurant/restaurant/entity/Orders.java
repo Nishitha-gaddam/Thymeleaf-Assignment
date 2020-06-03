@@ -1,8 +1,11 @@
 package com.myrestaurant.restaurant.entity;
 
 
+import java.sql.Date;
+
 import javax.persistence.*;
-import java.util.Date;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Entity
 @Table(name="orders")
@@ -28,14 +31,14 @@ public class Orders {
     @Column(name="item_price")
     private Double itemPrice;
 
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @JsonFormat(pattern = "yyyy-mm-dd")
     @Column(name="order_date")
-    private Date orderDate;
+    private String orderDate;
 
     public Orders() {
     }
 
-    public Orders(int customerId, int orderId, String itemName, int quantity, Double itemPrice, Date orderDate) {
+    public Orders(int customerId, int orderId, String itemName, int quantity, Double itemPrice, String orderDate) {
         this.customerId = customerId;
         this.orderId = orderId;
         this.itemName = itemName;
@@ -50,6 +53,9 @@ public class Orders {
 
     public void setCustomerId(int customerId) {
         this.customerId = customerId;
+        customerId=0;
+        customerId++;
+        
     }
 
     public int getOrderId() {
@@ -82,14 +88,16 @@ public class Orders {
 
     public void setItemPrice(Double itemPrice) {
         this.itemPrice = itemPrice;
+        itemPrice=100.00;
     }
 
-    public Date getOrderDate() {
+    public String getOrderDate() {
         return orderDate;
     }
 
-    public void setOrderDate(Date orderDate) {
+    public void setOrderDate(String orderDate) {
         this.orderDate = orderDate;
+        orderDate="2020-06-04";
     }
 
     @Override
