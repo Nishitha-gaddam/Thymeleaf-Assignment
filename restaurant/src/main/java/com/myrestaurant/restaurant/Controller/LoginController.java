@@ -10,4 +10,9 @@ public class LoginController {
 	    public String welcomePage() {
 	        return "welcome";
 	    }
+	 @GetMapping("/thank-you")
+	 public String thankYouPage(){
+		 return "thank-you";
+		 
+	 }
 }

@@ -13,9 +13,9 @@ public class Orders {
 
 //    @OneToMany(cascade=CascadeType.ALL)
 //    @JoinColumn(name = "customer")
-	  @GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="customer_id")
-    private int customerId;
+//	  @GeneratedValue(strategy=GenerationType.IDENTITY)
+//	@Column(name="customer_id")
+//    private int customerId;
 
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -29,34 +29,34 @@ public class Orders {
     private int quantity;
 
     @Column(name="item_price")
-    private Double itemPrice;
+    final private double itemPrice=100.00;
 
     @JsonFormat(pattern = "yyyy-mm-dd")
     @Column(name="order_date")
-    private String orderDate;
+    final private String orderDate="2020-06-04";
 
     public Orders() {
     }
 
-    public Orders(int customerId, int orderId, String itemName, int quantity, Double itemPrice, String orderDate) {
-        this.customerId = customerId;
+    public Orders( int orderId, String itemName, int quantity, Double itemPrice, String orderDate) {
+//        this.customerId = customerId;
         this.orderId = orderId;
         this.itemName = itemName;
         this.quantity = quantity;
-        this.itemPrice = itemPrice;
-        this.orderDate = orderDate;
+//        this.itemPrice;
+//        this.orderDate;
     }
 
-    public int getCustomerId() {
-        return customerId;
-    }
+//    public int getCustomerId() {
+//        return customerId;
+//    }
 
-    public void setCustomerId(int customerId) {
-        this.customerId = customerId;
-        customerId=0;
-        customerId++;
-        
-    }
+//    public void setCustomerId(int customerId) {
+//        this.customerId = customerId;
+//        customerId=0;
+//        customerId++;
+//        
+//    }
 
     public int getOrderId() {
         return orderId;
@@ -87,7 +87,7 @@ public class Orders {
     }
 
     public void setItemPrice(Double itemPrice) {
-        this.itemPrice = itemPrice;
+//        this.itemPrice = itemPrice;
         itemPrice=100.00;
     }
 
@@ -96,14 +96,14 @@ public class Orders {
     }
 
     public void setOrderDate(String orderDate) {
-        this.orderDate = orderDate;
+//        this.orderDate = orderDate;
         orderDate="2020-06-04";
     }
 
     @Override
     public String toString() {
         return "Orders{" +
-                "customerId=" + customerId +
+//                "customerId=" + customerId +
                 ", orderId=" + orderId +
                 ", itemName='" + itemName + '\'' +
                 ", quantity=" + quantity +

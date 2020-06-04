@@ -54,11 +54,11 @@ table {
 	<div class="split left">
 		<div class="centered">
 			<h2>Place Order</h2>
-			<form action="#" th:action="@{/api2/place-order}"
+			<form action="#" th:action="@{/thank-you}"
 						 th:object="${orders}" method="GET">
 		
 			<!-- Add hidden form field to handle update -->
-			<input type="hidden" th:field="*{customerId}" />
+		<!-- 	<input type="hidden" th:field="*{customerId}"  value=1/> -->
 			<input type="hidden" th:field="*{orderId}" />
 			<div class="form-inline">
 				 Item Name<br><input type="text" th:field="*{itemName}"

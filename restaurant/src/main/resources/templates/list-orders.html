@@ -41,7 +41,7 @@
 		<table class="table table-bordered table-striped">
 		<thead class="thead-dark">
 			<tr>
-					<th >Customer Id</th>
+				<!-- <th >Customer Id</th> -->	
 					<th >Order Id</th>
 					<th >Item Name</th>
 					<th >Quantity</th>
@@ -51,7 +51,7 @@
 				</thead>
 				<tr th:each="orders : ${ordersPlaced}">
 
-						<td th:text="${orders.customerId}" />
+						<!--<td th:text="${orders.customerId}" />  -->
 						<td th:text="${orders.orderId}" />
 						<td th:text="${orders.itemName} "/>
 						<td th:text="${orders.quantity}"/>

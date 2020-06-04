@@ -39,7 +39,7 @@
 		<thead class="thead-dark">
 			<tr>
 					<th >Bill Id</th>
-					<th >Customer Id</th>
+					<th >Order Id</th>
 					<th >Total Amount</th>
 					<th >Bill Date</th>
 	
@@ -48,13 +48,14 @@
 				<tr th:each="bill : ${ordersPlaced}">
 				
 						<td th:text="${bill.billId}" />
-						<td th:text="${bill.customerId}" />
+						<td th:text="${bill.orderId}" />
 						<td th:text="${bill.totalAmt} "/>
 						<td th:text="${bill.billDate}"/>
 		
 						
 					</tr>					
 			</table>
+			</div>
 	
 	</div>
 	<div class="logout " style="width:200px;">

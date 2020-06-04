@@ -15,8 +15,8 @@ public class Bills {
     @Column(name = "bill_id")
     private int billId;
 
-    @Column(name="customer_id")
-    private int customerId;
+    @Column(name="order_id")
+    private int orderId;
 
     @Column(name = "total_amount")
     private double totalAmt;
@@ -27,19 +27,19 @@ public class Bills {
     public Bills() {
     }
 
-    public Bills(int billId, int customerId, double totalAmt, Date billDate) {
+    public Bills(int billId, int orderId, double totalAmt, Date billDate) {
         this.billId = billId;
-        this.customerId = customerId;
+        this.orderId = orderId;
         this.totalAmt = totalAmt;
         this.billDate = billDate;
     }
 
-    public int getCustomerId() {
-        return customerId;
+    public int getorderId() {
+        return orderId;
     }
 
-    public void setCustomerId(int customerId) {
-        this.customerId = customerId;
+    public void setorderId(int orderId) {
+        this.orderId = orderId;
     }
 
     public double getTotalAmt() {
@@ -70,7 +70,7 @@ public class Bills {
     public String toString() {
         return "Bills{" +
                 "billId=" + billId +
-                "customerId=" + customerId +
+                "orderId=" + orderId +
                 ", totalAmt=" + totalAmt +
                 ", billDate=" + billDate +
                 '}';
