@@ -12,10 +12,12 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/bill")
+@RequestMapping(BillController.bill1)
 public class BillController {
+	
+	final  static  String bill1="/bills";
 
-    private BillRepository billRepository;
+     private BillRepository billRepository;
 
     @Autowired
     public BillController(BillRepository theBillRepository){
@@ -27,7 +29,7 @@ public class BillController {
      }
 
 
-    @GetMapping("/bill/{customerId}")
+    @GetMapping("/bills/{customerId}")
     public Optional<Bills> getBill(@PathVariable int customerId){
         return billRepository.findById(customerId);
     }

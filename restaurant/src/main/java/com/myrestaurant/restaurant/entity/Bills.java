@@ -34,11 +34,11 @@ public class Bills {
         this.billDate = billDate;
     }
 
-    public int getorderId() {
+    public int getOrderId() {
         return orderId;
     }
 
-    public void setorderId(int orderId) {
+    public void setOrderId(int orderId) {
         this.orderId = orderId;
     }
 
