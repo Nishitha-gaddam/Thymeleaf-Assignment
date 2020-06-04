@@ -15,19 +15,19 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
     	 User.UserBuilder users = User.withDefaultPasswordEncoder();
          auth.inMemoryAuthentication()
-    	.withUser(users.username("mary").password("fun123").roles("OWNER"))
-        .withUser(users.username("john").password("fun123").roles("CUSTOMER"))
-        .withUser(users.username("susan").password("test123").roles("WAITER"));
+    	.withUser(users.username("mary").password("fun123").roles("ADMIN"))
+        .withUser(users.username("john").password("fun123").roles("EMPLOYEE"))
+        .withUser(users.username("susan").password("fun123").roles("MANAGER"));
 //      
     }
 
     @Override
     protected void configure(HttpSecurity httpSecurity) throws Exception {
         httpSecurity.authorizeRequests()
-        .antMatchers("/").hasAnyRole("OWNER","CUSTOMER","WAITER")
-        .antMatchers("/api6/loginForm").hasAnyRole("OWNER")
-        .antMatchers("/api/login").hasAnyRole("OWNER","WAITER")
-        .antMatchers("/api1/login").hasAnyRole("OWNER","CUSTOMER")
+		   .antMatchers("/").hasAnyRole("ADMIN","EMPLOYEE","MANAGER")
+	        .antMatchers("/api6/loginForm").hasAnyRole("ADMIN")
+	        .antMatchers("/api/login").hasAnyRole("ADMIN","MANAGER")
+	        .antMatchers("/api1/login").hasAnyRole("ADMIN","EMPLOYEE")
 //        .antMatchers("/").hasAnyRole("WAITER","OWNER","COSTUMER")
 //        .antMatchers("/api6/loginForm").hasAnyRole("OWNER")
 //        .antMatchers("/api6/findbills").hasAnyRole("OWNER")
