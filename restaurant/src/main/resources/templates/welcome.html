@@ -22,6 +22,7 @@
        <li ><a th:href="@{/api6/loginForm}">Admin Login</a></li>
        <li ><a th:href="@{/api/login}">Waiter Login</a></li>
       <li><a th:href="@{/api1/login}">Customer Login</a></li>
+      User: <security:authentication property="principal.username" />, Role(s): <security:authentication property="principal.authorities" />
        
        
       
